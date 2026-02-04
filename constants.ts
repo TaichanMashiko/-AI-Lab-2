@@ -1,16 +1,18 @@
-// Google Sheet Configuration
-// Sheet ID extracted from: https://docs.google.com/spreadsheets/d/1FhYzD_CBGVbuge4jQOuxe8JwXMjA8s_fK80jCYTCfvo/edit?gid=0#gid=0
-const SHEET_ID = '1FhYzD_CBGVbuge4jQOuxe8JwXMjA8s_fK80jCYTCfvo';
-const GID = '0'; // The first sheet is usually 0
+// ==========================================
+// 設定手順 (Setup Instructions)
+// ==========================================
 
-// Construct the CSV export URL
-export const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${GID}`;
+// 1. Google Cloud Console (https://console.cloud.google.com/)
+//    - プロジェクトを作成し、「OAuth 同意画面」を外部(External)で設定
+//    - 「認証情報」>「OAuth クライアントID」を作成 (ウェブアプリケーション)
+//    - 「承認済みの JavaScript 生成元」に以下を追加:
+//        - http://localhost:5173
+//        - https://あなたのアプリ.vercel.app
+export const GOOGLE_CLIENT_ID = "1008158953225-00tpq2fe0oifl7qmsnkai6inld3n8oon.apps.googleusercontent.com"; 
 
-// Google OAuth Configuration
-// NOTE: For this to work on Vercel or Localhost, you must create a Project in Google Cloud Console,
-// enable credentials, and paste your Client ID here.
-// Since I cannot generate a valid one for you, this is a placeholder.
-// Please replace this with your own Client ID from https://console.cloud.google.com/apis/credentials
-export const GOOGLE_CLIENT_ID = "YOUR_GOOGLE_CLIENT_ID_HERE.apps.googleusercontent.com"; 
+// 2. Googleスプレッドシート (Google Sheet)
+//    - メニューの「ファイル」>「共有」>「ウェブに公開」
+//    - 「ドキュメント全体」と「カンマ区切り形式 (.csv)」を選択して公開
+export const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTacj9iZ872kPoG3_q5rbAKnZj0i9tRvrjdNHJvg50OfQLdhT9FIP0LajrEfyBhEGsgEMfdmQDZR2LA/pub?output=csv";
 
 export const APP_TITLE = "個人情報ビューア";
