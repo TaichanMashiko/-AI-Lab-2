@@ -1,0 +1,5 @@
+{
+  "name": "Student Account Viewer",
+  "description": "A secure viewer to check student ID and Password based on their Google Account email.",
+  "requestFramePermissions": []
+}
